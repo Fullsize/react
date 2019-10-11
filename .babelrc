@@ -1,0 +1,21 @@
+{
+	"presets": ["@babel/preset-env", "@babel/preset-react","@babel/preset-typescript"],
+	"plugins": [
+		["@babel/plugin-proposal-decorators", {
+			"legacy": true
+		}],
+		"@babel/plugin-proposal-class-properties",
+		"@babel/plugin-proposal-export-default-from",
+		"@babel/plugin-transform-runtime",
+		
+		[
+      "react-css-modules",
+      {
+        "webpackHotModuleReloading": true,
+        "generateScopedName": "[folder]__[local]--[hash:base64:5]",
+        "handleMissingStyleName": "warn",
+        "autoResolveMultipleImports": true //允许引入多个css文件
+      }
+    ],
+	]
+}
