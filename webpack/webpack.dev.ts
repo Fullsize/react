@@ -1,6 +1,6 @@
 const path=require('path');
 const webpack=require('webpack');
-const common=require('./webpack.common');
+const common=require('./webpack.common.ts');
 const merge=require('webpack-merge');
 
 module.exports=merge(common,{

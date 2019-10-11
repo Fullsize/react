@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ENVIRONMENT=development webpack-dev-server --config ./webpack/webpack.dev.js",
-    "build": "ENVIRONMENT=build webpack --config ./webpack/webpack.dev.js"
+    "start": "ENVIRONMENT=development webpack-dev-server --config ./webpack/webpack.dev.ts",
+    "build": "ENVIRONMENT=build webpack --config ./webpack/webpack.dev.ts"
   },
   "author": "ZhouYuTao2017",
   "license": "ISC",
