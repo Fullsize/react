@@ -68,6 +68,14 @@ module.exports = {
 			filename: '[name].[hash].css',
 			chunkFilename: '[id].[hash].css',
 		}),
+		new Happypack({
+			id: 'eslint',
+			loaders: [{
+				loader: 'eslint-loader'
+			}],
+			threadPool: happyThreadPool,
+		}),
+		
 		// 多线程编译
 		new Happypack({
 			id: 'babel',
@@ -79,13 +87,7 @@ module.exports = {
 			}],
 			threadPool: happyThreadPool,
 		}),
-		new Happypack({
-			id: 'eslint',
-			loaders: [{
-				loader: 'eslint-loader'
-			}],
-			threadPool: happyThreadPool,
-		})
+		
 
 	],
 	// 加载器
