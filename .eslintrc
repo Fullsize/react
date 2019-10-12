@@ -9,12 +9,19 @@
 		"es6": true,
 		"node": true
 	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
 	"rules": {
 		"generator-star-spacing": [0],
 		"consistent-return": [0],
 		"react/forbid-prop-types": [0],
 		"react/jsx-filename-extension": [1, {
-			"extensions": [".js"]
+			"extensions": [".js",".jsx"]
 		}],
 		"global-require": [0],
 		"import/prefer-default-export": [0],
@@ -62,12 +69,5 @@
 		"react/no-multi-comp": [0],
 		"react/no-unused-prop-types": [0],
 		"prefer-const": [0]
-	},
-	"parserOptions": {
-		"ecmaFeatures": {
-			"experimentalObjectRestSpread": true
-		},
-		"ecmaVersion": 2018,
-		"sourceType": "module"
 	}
 }

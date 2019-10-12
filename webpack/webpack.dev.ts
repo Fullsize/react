@@ -2,7 +2,7 @@ const path=require('path');
 const webpack=require('webpack');
 const common=require('./webpack.common.ts');
 const merge=require('webpack-merge');
-
+const {BundleAnalyzerPlugin}=require('webpack-bundle-analyzer')
 module.exports=merge(common,{
 	devServer:{
 		host: "0.0.0.0", //地址
@@ -12,5 +12,8 @@ module.exports=merge(common,{
 		// hot: true,
 		contentBase: path.join(__dirname, "dist"),
 		historyApiFallback: true
-	}
+	},
+	plugins: [
+    new BundleAnalyzerPlugin({ openAnalyzer: false })
+  ]
 })
