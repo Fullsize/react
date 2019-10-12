@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ENVIRONMENT=development webpack-dev-server --config ./webpack/webpack.dev.ts",
-    "build": "ENVIRONMENT=build webpack --config ./webpack/webpack.common.ts"
+    "build": "NODE_ENV=production ENVIRONMENT=production webpack --config ./webpack/webpack.production.ts"
   },
   "husky": {
     "hooks": {
@@ -36,6 +36,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@monajs/babel-plugin-react-css-modules": "^2.4.1",
+    "@types/history": "^4.7.3",
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
     "@types/sass": "^1.16.0",

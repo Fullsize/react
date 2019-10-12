@@ -12,7 +12,9 @@ const SpeedMeasurePlugin = require("speed-measure-webpack-plugin")
 const smp = new SpeedMeasurePlugin()
 const atImport= require( 'postcss-import');
 const happyThreadPool = Happypack.ThreadPool({ size: os.cpus().length });
+
 module.exports = {
+	devtool:"cheap-module-source-map",
 	mode:'development',
 	// 入口文件
 	entry: {
