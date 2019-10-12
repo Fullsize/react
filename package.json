@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ENVIRONMENT=development webpack-dev-server --config ./webpack/webpack.dev.ts",
-    "build": "ENVIRONMENT=build webpack --config ./webpack/webpack.dev.ts"
+    "build": "ENVIRONMENT=build webpack --config ./webpack/webpack.common.ts"
   },
   "husky": {
     "hooks": {
@@ -84,6 +84,7 @@
     "url-loader": "^2.2.0",
     "webpack": "^4.41.0",
     "webpack-build-notifier": "^1.1.1",
+    "webpack-bundle-analyzer": "^3.5.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2",
     "webpack-merge": "^4.2.2",

@@ -1,8 +1,14 @@
-import view from '@/views/index';
+import view from "@/views/index";
+
 export default [
 	{
-		path:'/',
+		path: "/",
 		exact: true,
-		component:view.home,
+		component: view.home
+	},
+	{
+		path: "/list",
+		exact: true,
+		component: view.list
 	}
-]
+];
