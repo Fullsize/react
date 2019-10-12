@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from "mobx-react";
 import App from '@/views/app';
+import 'reset-css';
 render(
 	<Provider>
 		<BrowserRouter >
