@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {observer, inject} from 'mobx-react';
+import {Button} from 'antd';
 interface Props{
 	page:number,
 	setPage:()=>void
@@ -16,6 +17,7 @@ class Home extends Component<Props>{
 			<>
 				<div>123</div>
 				<div>{page}</div>
+				<Button>按钮</Button>
 				<button onClick={()=>setPage()}>点击</button>
 			</>
 		)

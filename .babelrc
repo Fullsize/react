@@ -17,6 +17,15 @@
         "handleMissingStyleName": "warn",
         "autoResolveMultipleImports": true //允许引入多个css文件
       }
-    ],
+		],
+		[
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css",
+        "libraryDirectory": "es"
+      },
+      "antd"
+    ]
 	]
 }

@@ -5,7 +5,6 @@ class HomeActive {
 
 	constructor({ HomeStore }) {
 		this.HomeStore = HomeStore;
-		console.log(this.HomeStore);
 	}
 
 	@action
