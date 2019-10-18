@@ -6,7 +6,7 @@ import App from '@/views/app';
 import { createBrowserHistory } from 'history';
 
 import Stores from '@/stores/index';
-import Actions from '@/actions/index'
+import Actions from '@/actions/index';
 import 'reset-css';
 
 render(
