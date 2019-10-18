@@ -3,7 +3,7 @@ class List extends Component{
 	render(){
 		return(
 			<>
-				<div>list</div>
+				<div>list12314141</div>
 			</>
 		)
 	}
