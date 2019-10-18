@@ -9,11 +9,11 @@ module.exports=merge(common,{
 		port: 3000, //端口
 		inline: true, // 实时刷新
 		open: false, //自动打开浏览器
-		// hot: true,
+		hot: true,
 		contentBase: path.join(__dirname, "dist"),
 		historyApiFallback: true
 	},
 	plugins: [
-    new BundleAnalyzerPlugin({ openAnalyzer: false })
+    new BundleAnalyzerPlugin({ openAnalyzer: false ,analyzerPort: 8889,})
   ]
 })

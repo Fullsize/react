@@ -3,6 +3,7 @@ import { inject, observer } from 'mobx-react';
 import routers from '@/router/index'
 import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import {hot} from 'react-hot-loader/root'
 class App extends Component{
 	render(){
 		return(
@@ -20,4 +21,4 @@ class App extends Component{
 		)
 	}
 }
-export default App;
+export default hot(App);
