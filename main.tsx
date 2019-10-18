@@ -5,9 +5,12 @@ import { Provider } from "mobx-react";
 import App from '@/views/app';
 import { createBrowserHistory } from 'history';
 
+import Stores from '@/stores/index';
+import Actions from '@/actions/index'
 import 'reset-css';
+
 render(
-	<Provider >
+	<Provider {...Stores} { ...new Actions(Stores)}>
 		<Router  history={createBrowserHistory()}>
 			<Route component={App} />
 		</Router>

@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { inject, observer } from 'mobx-react';
 import routers from '@/router/index'
 import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import {hot} from 'react-hot-loader/root'
-class App extends Component{
-	render(){
-		return(
+import { hot } from 'react-hot-loader/root'
+class App extends Component {
+	render() {
+		return (
 			<div>
 				<Switch>
-					{routers.map((route,i)=>{
+					{routers.map((route, i) => {
 						const LoadableComponent = Loadable({
 							loader: route.component,
-							loading: () => null
+							loading: () => null,
 						});
 						return (<Route key={i} {...route} component={LoadableComponent} />)
 					})}
