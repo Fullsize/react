@@ -135,9 +135,7 @@ module.exports = {
 					options: {
 						ident: "postcss",
 						sourceMap: true,
-						plugins: [atImport,autoprefixer({
-							browsers: ["last 2 versions"]
-						})]
+						plugins: [autoprefixer()]
 					}
 				},
 			]
