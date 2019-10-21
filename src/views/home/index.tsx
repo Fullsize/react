@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {observer, inject} from 'mobx-react';
 import {Button} from 'antd';
+import './index.scss'
 interface Props{
 	page:number,
 	setPage:()=>void
