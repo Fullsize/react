@@ -9,7 +9,8 @@
 		"allowSyntheticDefaultImports": true
 	},
 	"include": [
-		"src"
+		"src",
+		"types/scss.d.ts"
 	],
 	"exclude": [
 		"node_modules"
