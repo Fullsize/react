@@ -10,7 +10,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require("autoprefixer");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin")
 const smp = new SpeedMeasurePlugin()
-const atImport= require( 'postcss-import');
+// const atImport= require( 'postcss-import');
 const happyThreadPool = Happypack.ThreadPool({ size: os.cpus().length });
 
 module.exports = {
@@ -96,7 +96,7 @@ module.exports = {
 	module: {
 		rules: [{
 			enforce: "pre",
-			test: /\.(js|jsx)$/,
+			test: /\.(jsx|tsx)$/,
 			loaders: ['happypack/loader?id=eslint'],
 			include: path.resolve(__dirname, '../src'),
 			exclude: /node_modules/
@@ -120,12 +120,12 @@ module.exports = {
 				{
 					loader: 'css-loader',
 					options: {
-						// modules: {
-						// 	localIdentName: '[path][name]__[local]--[hash:base64:5]',
-						// },
-						// importLoaders:1,
-						// import: true,
-						// sourceMap:true
+						modules: {
+							localIdentName: '[local]___[hash:base64:5]',
+						},
+						importLoaders:1,
+						import: true,
+						sourceMap:true
 					}
 				},
 				

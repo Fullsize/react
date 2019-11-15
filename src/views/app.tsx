@@ -1,9 +1,10 @@
-import React, { Component, Suspense } from 'react';
-import { inject, observer } from 'mobx-react';
-import routers from '@/router/index'
-import { Route, Switch } from 'react-router-dom';
-import Loadable from 'react-loadable';
-import { hot } from 'react-hot-loader/root'
+import React, { Component, Suspense } from "react";
+import { hot } from "react-hot-loader/root";
+import Loadable from "react-loadable";
+import { inject, observer } from "mobx-react";
+import { Route, Switch } from "react-router-dom";
+import routers from "@/router/index";
+
 class App extends Component {
 	render() {
 		return (
@@ -14,7 +15,7 @@ class App extends Component {
 							loader: route.component,
 							loading: () => null,
 						});
-						return (<Route key={i} {...route} component={LoadableComponent} />)
+						return <Route key={i} {...route} component={LoadableComponent} />
 					})}
 				</Switch>
 			</div>

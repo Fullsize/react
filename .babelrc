@@ -13,11 +13,16 @@
       "react-css-modules",
       {
         "webpackHotModuleReloading": true,
-        "generateScopedName": "[folder]__[local]--[hash:base64:5]",
+        "generateScopedName": "[local]___[hash:base64:5]",
         "handleMissingStyleName": "warn",
-        "autoResolveMultipleImports": true //允许引入多个css文件
+        "autoResolveMultipleImports": true,
+        "filetypes": {
+          ".scss": {
+              "syntax": "postcss-scss"
+          }
+        }
       }
-		],
+    ],
 		[
       "import",
       {

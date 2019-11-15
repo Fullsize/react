@@ -8,7 +8,9 @@
     "start": "ENVIRONMENT=development webpack-dev-server --config ./webpack/webpack.dev.ts",
     "build": "NODE_ENV=production ENVIRONMENT=production webpack --config ./webpack/webpack.production.ts"
   },
-  "browserslist":["last 2 versions"],
+  "browserslist": [
+    "last 2 versions"
+  ],
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
@@ -37,8 +39,10 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@monajs/babel-plugin-react-css-modules": "^2.4.1",
+    "@types/antd": "^1.0.0",
     "@types/history": "^4.7.3",
     "@types/react": "^16.9.5",
+    "@types/react-css-modules": "^4.6.2",
     "@types/react-dom": "^16.9.1",
     "@types/sass": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^2.3.3",

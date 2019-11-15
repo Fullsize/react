@@ -17,11 +17,18 @@
 		"sourceType": "module"
 	},
 	"rules": {
+		"@typescript-eslint/no-unused-vars":[0],
+		"@typescript-eslint/no-explicit-any":[0],
+		"@typescript-eslint/explicit-function-return-type":[0],
+		"prettier/prettier":[0],
+		"react/jsx-indent":[0],
+		"react/jsx-props-no-spreading":[0],
+		"react/button-has-type":[0],
 		"generator-star-spacing": [0],
 		"consistent-return": [0],
 		"react/forbid-prop-types": [0],
 		"react/jsx-filename-extension": [1, {
-			"extensions": [".js",".jsx"]
+			"extensions": [".js",".jsx",".tsx"]
 		}],
 		"global-require": [0],
 		"import/prefer-default-export": [0],

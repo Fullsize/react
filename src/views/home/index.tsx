@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import {observer, inject} from 'mobx-react';
-import {Button} from 'antd';
+import React, { Component } from "react";
+import { observer, inject } from 'mobx-react';
+import { Button } from 'antd';
 import './index.scss'
-interface Props{
-	page:number,
-	setPage:()=>void
+
+interface Props {
+	page: number,
+	setPage: () => void
 }
-@inject((stores:any)=>({
-	page:stores.HomeStore.page,
-	setPage:stores.HomeAction.setPage,
+@inject((stores: any) => ({
+	page: stores.HomeStore.page,
+	setPage: stores.HomeAction.setPage,
 }))
 @observer
 class Home extends Component<Props>{
-	render(){
-		const {page,setPage}=this.props;
-		return(
+	render() {
+		const { page, setPage } = this.props;
+		return (
 			<>
-				<div>123</div>
-				<div>{page}</div>
-				<Button>按钮</Button>
-				<button onClick={()=>setPage()}>点击</button>
+				<div styleName='box'>{page}</div>
+				<Button>btn</Button>
+				<button styleName='btn' onClick={() => setPage()}>submit</button>
 			</>
 		)
 	}
