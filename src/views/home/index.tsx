@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { observer, inject } from 'mobx-react';
 import { Button } from 'antd';
-import './index.scss'
+import './index.css'
 
 interface Props {
 	page: number,
@@ -18,8 +18,8 @@ class Home extends Component<Props>{
 		return (
 			<>
 				<div styleName='box'>{page}</div>
-				<Button>btn</Button>
-				<button styleName='btn' onClick={() => setPage()}>submit</button>
+				<Button>btn123</Button>
+				<button className='btn' onClick={() => setPage()}>submit</button>
 			</>
 		)
 	}

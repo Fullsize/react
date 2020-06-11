@@ -14,14 +14,14 @@ const smp = new SpeedMeasurePlugin()
 const happyThreadPool = Happypack.ThreadPool({ size: os.cpus().length });
 
 module.exports = {
-	devtool:"cheap-module-source-map",
-	mode:'development',
+	devtool: "cheap-module-source-map",
+	mode: 'development',
 	// 入口文件
 	entry: {
 		// uni:["@babel/polyfill",path.resolve(__dirname, "../main.js")]
 		uni: path.resolve(__dirname, "../main.tsx")
 	},
-
+	context: path.resolve(__dirname, '../'),
 	//出口文件
 	output: {
 		// 出口地址
@@ -32,7 +32,7 @@ module.exports = {
 
 	// 解析
 	resolve: {
-		extensions: ['.js', '.jsx', '.ts', '.tsx', '.json','.mjs'],
+		extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.mjs'],
 		modules: [path.resolve(__dirname, '../src'), 'node_modules'],
 		alias: {
 			'@': path.resolve(__dirname, '../src')
@@ -77,7 +77,7 @@ module.exports = {
 			}],
 			threadPool: happyThreadPool,
 		}),
-		
+
 		// 多线程编译
 		new Happypack({
 			id: 'babel',
@@ -89,7 +89,7 @@ module.exports = {
 			}],
 			threadPool: happyThreadPool,
 		}),
-		
+
 
 	],
 	// 加载器
@@ -106,12 +106,35 @@ module.exports = {
 			loaders: ['happypack/loader?id=babel'],
 			include: path.resolve(__dirname, '../src'),
 			exclude: /node_modules/,
-			
+
 		},
 		{
 			test: /\.ts(x?)$/,
 			loaders: ['ts-loader'],
 		},
+		// antd
+		{
+			test: /\.(css|scss)$/,
+			use: [
+				process.env.ENVIRONMENT === "development" ?
+					'style-loader' : MiniCssExtractPlugin.loader,
+				'css-loader',
+				'sass-loader',
+			],
+			include: /node_modules/,
+			exclude: path.resolve(__dirname, '../src'),
+		},
+
+		{
+			test: /\.(gif|png|jpe?g)$/i,
+			use: [{
+				loader: "url-loader",
+				options: {
+					limit: 20480
+				}
+			}]
+		},
+
 		{
 			test: /\.(css|scss)$/,
 			use: [
@@ -123,12 +146,12 @@ module.exports = {
 						modules: {
 							localIdentName: '[local]___[hash:base64:5]',
 						},
-						importLoaders:1,
+						importLoaders: 1,
 						import: true,
-						sourceMap:true
+						sourceMap: true
 					}
 				},
-				
+
 				'sass-loader',
 				{
 					loader: "postcss-loader",
@@ -138,7 +161,9 @@ module.exports = {
 						plugins: [autoprefixer()]
 					}
 				},
-			]
+			],
+			include: path.resolve(__dirname, '../src'),
+			exclude: /node_modules/,
 		},
 		{
 			test: /\.(gif|png|jpe?g)$/i,

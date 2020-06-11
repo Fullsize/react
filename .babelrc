@@ -1,6 +1,11 @@
 {
 	"presets": ["@babel/preset-env", "@babel/preset-react","@babel/preset-typescript"],
 	"plugins": [
+    ["react-css-modules",{
+      "exclude":"node_modules",
+      "skip":true,
+      "autoResolveMultipleImports":true
+    }],
 		["@babel/plugin-proposal-decorators", {
 			"legacy": true
 		}],
@@ -8,21 +13,6 @@
 		"@babel/plugin-proposal-class-properties",
 		"@babel/plugin-proposal-export-default-from",
 		"@babel/plugin-transform-runtime",
-		
-		[
-      "react-css-modules",
-      {
-        "webpackHotModuleReloading": true,
-        "generateScopedName": "[local]___[hash:base64:5]",
-        "handleMissingStyleName": "warn",
-        "autoResolveMultipleImports": true,
-        "filetypes": {
-          ".scss": {
-              "syntax": "postcss-scss"
-          }
-        }
-      }
-    ],
 		[
       "import",
       {
@@ -31,6 +21,6 @@
         "libraryDirectory": "es"
       },
       "antd"
-    ]
+    ] 
 	]
 }
